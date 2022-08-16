@@ -3,9 +3,16 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import { Button } from '../styles/Button';
 import { useGlobalContext } from '../Context';
+import { Navigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const HeroSection = () => {
     const {name , image} = useGlobalContext();
+    const navigate = useNavigate();
+    const navigateToContacts = () => {
+        // 👇️ navigate to /contacts
+        navigate('/contact');
+      };
     return (
         <Wrapper>
             <div className="container grid grid-two-column">
@@ -16,9 +23,11 @@ const HeroSection = () => {
                         I'm {name} . Lorem ipsum dolor sit amet consectetur, adipisicing elit.
                         Perferendis ducimus consectetur ab fugit consequuntur. Architecto culpa, illo labore eius.
                     </p>
-                    <Button className="btn hireme-btn">
+                    {/* <Button className="btn hireme-btn">
                         <NavLink to="/contact">Hire Me</NavLink>
-                    </Button>
+                    </Button> */}
+                    {/* <Button className="btn hireme-btn" to="/contact">Hire Me </Button> */}
+                    <button className="btn hireme-btn" onClick={navigateToContacts}>Hire Me</button>
                 </div>
                 <div className='section-hero-image'>
                     <picture>
@@ -40,7 +49,33 @@ const Wrapper = styled.section`
     }
 
     .btn{
+        font-size: 1.7rem;
         max-width: 16rem;
+        text-decoration: none;
+        background-color: rgb(98 84 243);
+        color: rgb(255 255 255);
+        padding: 1.4rem 2.4rem;
+        border: none;
+        text-transform: uppercase;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease 0s;
+        -moz-transition: all 0.3s ease 0s;
+        -o-transition: all 0.3s ease 0s;
+
+        &:hover,
+        &:active {
+            box-shadow: 0 2rem 2rem 0 rgb(132 144 255 / 30%);
+            box-shadow: ${({ theme }) => theme.colors.shadowSupport};
+            transform: scale(0.96);
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(255 255 255);
+            font-size: 1.8rem;
+        }
     }
 
     .hero-top-data{
