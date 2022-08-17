@@ -84,7 +84,7 @@ li {
     color: ${({ theme }) => theme.colors.black};
     padding: 1.6rem 2.4rem;
     border: 1px solid ${({ theme }) => theme.colors.border};
-    /* text-transform: uppercase; */
+    text-transform: uppercase;
    box-shadow: ${({ theme }) => theme.colors.shadowSupport};
 }
     input[type="submit"]{
