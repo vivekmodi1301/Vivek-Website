@@ -31,7 +31,7 @@ export const data = [
     {
       "id": 6,
       "title": "Thapa CodeFest",
-      "image": "https://thapaonlineclass.com/images/thapa.png",
+      "image": "https://149695847.v2.pressablecdn.com/wp-content/uploads/2020/01/top-10-DS-projects.png",
       "description": "It's a monthly event where we will give a project and you have to submit your project. Codefest will be mostly related to frontend projects and occasionally fullstack project."
     }
 ]
